@@ -1,0 +1,27 @@
+#!/usr/bin/env php
+<?php
+
+define('TERSWORKS_START', microtime(true));
+
+$action = $argv[1] ?? null;
+
+switch ($action)
+{
+	case 'run':
+		runApplication();
+		break;
+	default:
+		echo "Unknown action: $action\n";
+		break;
+}
+
+function runApplication()
+{
+    $host = '127.0.0.1';
+    $port = '8000';
+    $docRoot = __DIR__ . '/public';
+
+    echo "Starting server on http://$host:$port\n";
+    $command = sprintf('php -S %s:%s -t %s > /dev/null 2>&1', $host, $port, $docRoot);
+    passthru($command);
+}

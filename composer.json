@@ -1,0 +1,28 @@
+{
+    "name": "tersworks/tersworks",
+    "description": "The skeleton application for the Tersworks framework.",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "php": "^8.3",
+        "tersworks/framework": "^0.1.4@alpha"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preffered-install": "dist",
+        "sort-packages": true
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/tersworks/framework"
+        }  
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
